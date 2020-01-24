@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'newsFeedApp';
+  selectedCategory = 'sports';
+  queryString = '';
+
+  onCategorySelected(category: string) {
+    this.selectedCategory = category;
+  }
+
+  onSetSearchQuery(queryText: string) {
+    this.queryString = queryText;
+  }
+
 }

@@ -1,0 +1,16 @@
+<div>
+  <mat-nav-list>
+  <mat-list-item *ngFor="let article of articles$ | async" [ngSwitch]="getIsBandwithFast() && article.urlToImage">
+   <img *ngSwitchCase="true" matListAvatar  class="article-image" [src]="article.urlToImage"/>
+   <mat-icon matListIcon *ngSwitchCase="false" class="article-image">folder</mat-icon>
+   <h3 matLine> {{article.title}} </h3>
+      <p matLine>
+        <span
+            appHighlight
+            matTooltip={{article.description}}
+            class="article-description"> {{article.description}} </span>
+      </p>
+  </mat-list-item>
+</mat-nav-list>
+  <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+</div>
