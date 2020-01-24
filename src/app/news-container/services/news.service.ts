@@ -20,12 +20,4 @@ export class NewsService {
     const urlPrefix = isSearchQuery ? `?q=${value}` : `?country=il&category=${value}`;
     return this.http.get(`${this.baseUrl}${isSearchQuery ? 'everything' : 'top-headlines'}${urlPrefix}${this.apiKeyPrefix}`);
   }
-
-  getHackerNewsArticlesIds() {
-    return this.http.get('https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty');
-  }
-
-  getHackerNewsArticleById(id: number) {
-    return this.http.get(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`);
-  }
 }

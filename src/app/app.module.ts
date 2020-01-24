@@ -19,6 +19,7 @@ import { MatButtonModule } from '@angular/material';
 import { HighlightDirective } from './news-container/highlight.directive';
 import { FormsModule } from '@angular/forms';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
+import { NewsItemComponent } from './news-item/news-item.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.compo
     OptionsPanelComponent,
     NewsContainerComponent,
     HighlightDirective,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    NewsItemComponent
   ],
   imports: [
     BrowserModule,
