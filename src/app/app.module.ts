@@ -17,8 +17,9 @@ import {
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material';
 import { HighlightDirective } from './news-container/highlight.directive';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
+import { AddUserCustomParamsComponent } from './add-user-custom-params/add-user-custom-params.component';
 
 @NgModule({
   declarations: [
@@ -26,13 +27,15 @@ import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.compo
     OptionsPanelComponent,
     NewsContainerComponent,
     HighlightDirective,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    AddUserCustomParamsComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     MatInputModule,
     MatListModule,
     MatButtonModule,

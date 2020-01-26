@@ -1,4 +1,5 @@
 <div class="app-container">
+  <app-add-user-custom-params></app-add-user-custom-params>
   <app-options-panel (setCategory)="onCategorySelected($event)" (setSearchQuery)="onSetSearchQuery($event)"></app-options-panel>
   <app-news-container [queryString]="queryString" [selectedCategory]="selectedCategory"></app-news-container>
 </div>
