@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddUserCustomParamsComponent } from './add-user-custom-params.component';
+import { AddUserCustomParamsComponent } from './user-custom-params.component';
 
 describe('AddUserCustomParamsComponent', () => {
   let component: AddUserCustomParamsComponent;

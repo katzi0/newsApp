@@ -3,11 +3,11 @@ import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { NewsService } from '../news-container/services/news.service';
 
 @Component({
-  selector: 'app-add-user-custom-params',
-  templateUrl: './add-user-custom-params.component.html',
-  styleUrls: ['./add-user-custom-params.component.scss']
+  selector: 'app-user-custom-params',
+  templateUrl: './user-custom-params.component.html',
+  styleUrls: ['./user-custom-params.component.scss']
 })
-export class AddUserCustomParamsComponent implements OnInit {
+export class UserCustomParamsComponent implements OnInit {
   private fb: FormBuilder;
   formController: FormGroup;
   @Output()
