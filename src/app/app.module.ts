@@ -20,6 +20,7 @@ import { HighlightDirective } from './news-container/highlight.directive';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 import { AddUserCustomParamsComponent } from './add-user-custom-params/add-user-custom-params.component';
+import { NewsItemComponent } from './news-item/news-item.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AddUserCustomParamsComponent } from './add-user-custom-params/add-user-
     NewsContainerComponent,
     HighlightDirective,
     LoadingSpinnerComponent,
-    AddUserCustomParamsComponent
+    AddUserCustomParamsComponent,
+    NewsItemComponent,
   ],
   imports: [
     BrowserModule,

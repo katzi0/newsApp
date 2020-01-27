@@ -18,4 +18,8 @@ export class AppComponent {
     this.queryString = queryText;
   }
 
+  formValue(event){
+    console.log(event);
+  }
+
 }

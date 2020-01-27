@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { SearchConfig, SearchTypes } from '../../../../config';
+import { userQuery } from 'src/app/types';
+
+const db = []
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +12,6 @@ export class NewsService {
   baseUrl = 'https://newsapi.org/v2/';
   apiKey = 'f9233c46cce64a0fb1733f176e1513ae';
   apiKeyPrefix = `&apiKey=${this.apiKey}`;
-
   constructor(private http: HttpClient) {
 
   }
@@ -20,12 +22,18 @@ export class NewsService {
     const urlPrefix = isSearchQuery ? `?q=${value}` : `?country=il&category=${value}`;
     return this.http.get(`${this.baseUrl}${isSearchQuery ? 'everything' : 'top-headlines'}${urlPrefix}${this.apiKeyPrefix}`);
   }
-
-  getHackerNewsArticlesIds() {
-    return this.http.get('https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty');
+  saveUserQueries(query:Object){
+    const userQuery:userQuery = this.mapUserQueryToInterface(query);
+    db[db.length] = userQuery; 
   }
-
-  getHackerNewsArticleById(id: number) {
-    return this.http.get(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`);
+  mapUserQueryToInterface(query){
+    const userQuery: userQuery = ({ category: '', country: '', query: '' });
+    Object.keys(query).forEach(key => {
+      userQuery[key] = query[key]
+    })
+    return userQuery
+  }
+  getUserQueryDb(){
+    return db;
   }
 }

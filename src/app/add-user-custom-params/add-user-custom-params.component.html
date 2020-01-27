@@ -1,11 +1,19 @@
-<form>
-<mat-form-field class="example-full-width">
-  <input matInput [formControl]='category'>
-</mat-form-field>
-<mat-form-field class="example-full-width">
-  <input matInput [formControl]='country'>
-</mat-form-field>
-<mat-form-field class="example-full-width">
-  <input matInput [formControl]='query'>
-</mat-form-field>
+<form [formGroup]="formController" (ngSubmit)="onSubmit()">
+  <div class="form-container">
+      <mat-form-field class="example-full-width">
+          <input matInput formControlName='category' placeholder="type category">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput formControlName='country' placeholder="type country">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput formControlName='query' placeholder="type query">
+        </mat-form-field>
+  </div>
+  <button>submit</button>
+  <div *ngFor="let row of db">
+    {{row.country}}
+    {{row.category}}
+    {{row.query}}
+  </div>
 </form>
