@@ -1,0 +1,18 @@
+<div>
+<mat-button-toggle-group  name="fontStyle" aria-label="Font Style">
+    <mat-button-toggle
+    *ngFor="let option of optionsCategories.options"
+    value="bold"
+    (click)="onCategorySelected(option.categoryName)">
+    {{option.categoryName}}
+    <mat-icon
+         aria-hidden="false" aria-label="Example home icon">
+         {{option.iconName}}
+       </mat-icon>
+    </mat-button-toggle>
+</mat-button-toggle-group>
+<input [(ngModel)]="searchQuery" (ngModelChange)="onQueryChange($event)" placeholder="name"/>
+
+</div>
+
+

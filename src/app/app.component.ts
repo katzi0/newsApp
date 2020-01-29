@@ -6,5 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  title = 'newsAppNg8';
+  title = 'newsFeedApp';
+  selectedCategory = 'sports';
+  queryString = '';
+
+  onCategorySelected(category: string) {
+    this.selectedCategory = category;
+  }
+
+  onSetSearchQuery(queryText: string) {
+    this.queryString = queryText;
+  }
+
+  formValue(event){
+    console.log(event);
+  }
+
 }

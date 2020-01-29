@@ -1,0 +1,8 @@
+<div>
+  <mat-nav-list>
+  <div *ngFor="let article of articles$ | async">
+    <app-news-item  [article]="article" ></app-news-item>
+  </div>
+</mat-nav-list>
+  <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+</div>
