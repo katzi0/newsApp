@@ -1,7 +1,14 @@
 {
     "extends": "../tslint.json",
+    "rulesDirectory": [
+        "node_modules/rxjs-tslint"
+      ],
     "rules": {
-        "directive-selector": [
+        "rxjs-collapse-imports": true,
+    "rxjs-pipeable-operators-only": true,
+    "rxjs-no-static-observable-methods": true,
+    "rxjs-proper-imports": true,
+    "directive-selector": [
             true,
             "attribute",
             "app",
