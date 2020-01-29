@@ -21,6 +21,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 import { UserCustomParamsComponent } from './add-user-custom-params/user-custom-params.component';
 import { NewsItemComponent } from './news-item/news-item.component';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,7 @@ import { NewsItemComponent } from './news-item/news-item.component';
     MatSelectModule,
     MatButtonToggleModule,
     MatProgressSpinnerModule,
+    StoreModule.forRoot(reducers, { metaReducers }),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,4 @@
 <div class="app-container">
-  <app-add-user-custom-params (formValue)="formValue($event)"></app-add-user-custom-params>
-  <app-options-panel *ngIf="false" (setCategory)="onCategorySelected($event)" (setSearchQuery)="onSetSearchQuery($event)"></app-options-panel>
-  <app-news-container *ngIf="false" [queryString]="queryString" [selectedCategory]="selectedCategory"></app-news-container>
+  <app-options-panel (setCategory)="onCategorySelected($event)" (setSearchQuery)="onSetSearchQuery($event)"></app-options-panel>
+  <app-news-container [queryString]="queryString" [selectedCategory]="selectedCategory"></app-news-container>
 </div>
