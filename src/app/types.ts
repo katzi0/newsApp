@@ -3,8 +3,13 @@ export interface Article {
   url: string;
 }
 
-export interface userQuery {
+export interface UserQuery {
   category:string;
-  country: string; 
+  country: Country; 
   query: string;
+}
+
+export interface Country {
+  label:string;
+  value: string;
 }

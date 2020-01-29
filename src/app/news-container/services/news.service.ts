@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { SearchConfig, SearchTypes } from '../../../../config';
-import { userQuery } from 'src/app/types';
+import { UserQuery } from 'src/app/types';
 
 const db = []
 
@@ -23,11 +23,11 @@ export class NewsService {
     return this.http.get(`${this.baseUrl}${isSearchQuery ? 'everything' : 'top-headlines'}${urlPrefix}${this.apiKeyPrefix}`);
   }
   saveUserQueries(query:Object){
-    const userQuery:userQuery = this.mapUserQueryToInterface(query);
+    const userQuery:UserQuery = this.mapUserQueryToInterface(query);
     db[db.length] = userQuery; 
   }
   mapUserQueryToInterface(query){
-    const userQuery: userQuery = ({ category: '', country: '', query: '' });
+    const userQuery: UserQuery = ({ category: '', country: { label: '', value: '' }, query: '' });
     Object.keys(query).forEach(key => {
       userQuery[key] = query[key]
     })

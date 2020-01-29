@@ -12,15 +12,17 @@ import {
   MatListModule,
   MatProgressSpinnerModule,
   MatSelectModule,
-  MatTooltipModule
+  MatTooltipModule,
+  MatAutocompleteModule
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material';
 import { HighlightDirective } from './news-container/highlight.directive';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
-import { UserCustomParamsComponent } from './add-user-custom-params/user-custom-params.component';
+import { UserCustomParamsComponent } from './user-custom-params/user-custom-params.component';
 import { NewsItemComponent } from './news-item/news-item.component';
+import { SelectParamComponent } from './user-custom-params/select-param/select-param.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ import { NewsItemComponent } from './news-item/news-item.component';
     LoadingSpinnerComponent,
     UserCustomParamsComponent,
     NewsItemComponent,
+    SelectParamComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +49,7 @@ import { NewsItemComponent } from './news-item/news-item.component';
     MatSelectModule,
     MatButtonToggleModule,
     MatProgressSpinnerModule,
+    MatAutocompleteModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
