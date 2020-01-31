@@ -10,7 +10,7 @@ export interface State {
 }
 
 export const initialState: State = {
-  currentUserQuery: { category: '', country: { label: '', value: '' }, query: '' }
+  currentUserQuery: { category: '', country: { label: '', value: '' }, query: 'type query to select' }
 };
 
 const _customParamsReducer = createReducer(

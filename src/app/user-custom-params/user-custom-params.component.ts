@@ -3,9 +3,10 @@ import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { NewsService } from '../news-container/services/news.service';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { increment,decrement,reset } from '../actions/counter.actions';
+import { increment, decrement, reset } from '../actions/counter.actions';
 import { UserQuery } from '../types';
 import { loadCustomParamss } from '../actions/custom-params.actions';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-user-custom-params',
@@ -23,10 +24,10 @@ export class UserCustomParamsComponent implements OnInit {
   constructor(
     fb: FormBuilder,
     private newsService: NewsService,
-    private store: Store<{ count: UserQuery }>
+    private store: Store<{ customParamsReducer: any }>
   ) {
     this.fb = fb;
-    this.customParamsFields$ = this.store.pipe(select('customParamsReducer'))
+    this.customParamsFields$ = this.store.pipe(select('customParamsReducer'), map(value => value.currentUserQuery))
   }
 
   ngOnInit() {
@@ -37,6 +38,11 @@ export class UserCustomParamsComponent implements OnInit {
     })
     this.db = this.newsService.getUserQueryDb();
     this.store.dispatch(loadCustomParamss())
+    this.customParamsFields$.subscribe(currentUserQuery => {
+      this.formController.patchValue({
+        query: currentUserQuery.query
+      })
+    })
   }
 
   onSubmit() {
@@ -48,7 +54,7 @@ export class UserCustomParamsComponent implements OnInit {
     this.formController.reset()
   }
 
-  increment(){
+  increment() {
     this.store.dispatch(increment());
   }
 
