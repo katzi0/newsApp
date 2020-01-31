@@ -1,14 +1,14 @@
 <form [formGroup]="formController" (ngSubmit)="onSubmit()">
   <div class="form-container">
-      <mat-form-field class="example-full-width">
-          <input matInput formControlName='category' placeholder="type category">
-        </mat-form-field>
-        <!-- <mat-form-field class="example-full-width">
+    <mat-form-field class="example-full-width">
+      <input matInput formControlName='category' placeholder="type category">
+    </mat-form-field>
+    <!-- <mat-form-field class="example-full-width">
           <input matInput formControlName='country' placeholder="type country">
         </mat-form-field> -->
-        <mat-form-field class="example-full-width">
-          <input matInput formControlName='query' placeholder="type query">
-        </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput formControlName='query' placeholder="type query">
+    </mat-form-field>
   </div>
   <button>submit</button>
   <div *ngFor="let row of db">
@@ -16,5 +16,8 @@
     {{row.category}}
     {{row.query}}
   </div>
-  <app-select-param  [parentForm]="formController" ></app-select-param>
+  <app-select-param [parentForm]="formController"></app-select-param>
 </form>
+
+<button (click)="increment()">increment</button>
+<div>{{count$ | async}}</div>

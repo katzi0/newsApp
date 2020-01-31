@@ -23,6 +23,13 @@ import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.compo
 import { UserCustomParamsComponent } from './user-custom-params/user-custom-params.component';
 import { NewsItemComponent } from './news-item/news-item.component';
 import { SelectParamComponent } from './user-custom-params/select-param/select-param.component';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import { EffectsModule } from '@ngrx/effects';
+import { AppEffects } from './app.effects';
+import { customParamsReducer } from './reducers/custom-params.reducer';
+import { counterReducer } from './reducers/counter.reducer';
 
 @NgModule({
   declarations: [
@@ -50,6 +57,9 @@ import { SelectParamComponent } from './user-custom-params/select-param/select-p
     MatButtonToggleModule,
     MatProgressSpinnerModule,
     MatAutocompleteModule,
+    StoreModule.forRoot({ customParamsReducer }),
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
+    EffectsModule.forRoot([AppEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent]
